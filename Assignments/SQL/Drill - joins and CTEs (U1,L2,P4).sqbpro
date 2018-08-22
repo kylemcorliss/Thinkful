@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/kylem/Dropbox/Personal/Thinkful/Assignments/SQL/bikeshare.db" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="3744"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="stations"/><default_encoding codec=""/><browsetable_info data="AAAAAA=="/></tab_browse><tab_sql><sql name="SQL 1">WITH 
+	rain 
+AS (
+	SELECT 
+		Date
+	FROM weather
+	WHERE Events = 'Rain'
+	GROUP BY 1
+)
+
+SELECT trip_id
+	,duration
+	,DATE(start_date) as trip_date
+FROM trips t
+JOIN rain
+ON rain.date = trip_date
+
+ORDER BY duration desc
+LIMIT 3</sql><sql name="SQL 2">SELECT t.name
+	,s.docks_available
+	,COUNT(s.timestamp) AS '# of'
+FROM status s
+JOIN stations t
+ON s.station_id = t.station_id
+
+WHERE s.docks_available = 0
+
+GROUP BY t.name
+	,s.docks_available	
+ORDER BY COUNT(s.timestamp) desc</sql><sql name="SQL 3">SELECT s.name
+	,s.dockcount
+	,COUNT(t.trip_id) AS '# of Trips'
+FROM stations s
+JOIN trips t
+ON t.start_station = s.name
+
+GROUP BY s.name
+	,s.dockcount
+ORDER BY s.dockcount desc</sql><sql name="SQL 4">WITH 
+	rain 
+AS (
+	SELECT Date
+	FROM weather
+	WHERE Events = 'Rain'
+	GROUP BY Date
+),
+
+rain_trips AS (
+SELECT trip_id
+	,duration
+	,DATE(start_date) as trip_date
+FROM trips
+JOIN rain
+ON rain.date = trip_date
+
+ORDER BY duration desc
+)
+
+SELECT trip_date
+	,MAX(duration)
+FROM rain_trips
+GROUP BY trip_date</sql><current_tab id="0"/></tab_sql></sqlb_project>
