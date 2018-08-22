@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/kylem/Dropbox/Personal/Thinkful/Assignments/bikeshare.db" foreign_keys="1"/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="3744"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="stations"/><default_encoding codec=""/><browsetable_info data="AAAAAA=="/></tab_browse><tab_sql><sql name="SQL 1">SELECT MAX(MaxTemperatureF)
+	,ZIP
+FROM weather</sql><sql name="SQL 2">SELECT start_station
+	,COUNT(trip_id) AS '# of trips'
+FROM trips
+
+GROUP BY start_station
+ORDER BY COUNT(trip_id) desc</sql><sql name="SQL 3">SELECT trip_id
+	,MIN(duration)
+FROM trips</sql><sql name="SQL 4">SELECT end_station
+	,AVG(duration)
+FROM trips
+
+GROUP BY end_station
+ORDER BY AVG(duration) desc</sql><current_tab id="3"/></tab_sql></sqlb_project>
