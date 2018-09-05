@@ -1,0 +1,13 @@
+BIAS
+
+1. You're testing advertising emails for a bathing suit company and you test one version of the email in February and the other in May.
+    Contextual bias - I'm much more likely to be in the market for a bathing suit closer to summer than in the middle of winter
+
+2. You open a clinic to treat anxiety and find that the people who visit show a higher rate of anxiety than the general population.
+    Sampling bias - this is pure self-selection, people who don't have anxiety problems, or don't feel they have anxiety problems, aren't going to reach out for treatment
+
+3. You launch a new ad billboard based campaign and see an increase in website visits in the first week.
+    Bias in assignment to conditions - there is no controlled group here. Any advertising is better than no advertising, so launching a new ad billboard without having anything there prior doesn't tell you how successful the campaign was. All you have learned is that doing some advertising increases website visits.
+
+4. You launch a loyalty program but see no change in visits in the first week.
+    Bias in assignment to conditions - loyalty programs are typically for existing customers to reward them for increased usage. Therefore, it's possible the people signing up for the loyalty program (if at all), already visit the site and therefore no increase has occurred. This one also seems to be looking at the wrong key metric. Launching a loyalty program would affect sales and potentially margin depending on what your rewarding customers with. Site traffic doesn't seem like the right metric.
