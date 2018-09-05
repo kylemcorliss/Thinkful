@@ -1,0 +1,29 @@
+Challenge: Evaluate an experiment analysis
+
+1. The Sith Lords are concerned that their recruiting slogan, "Give In to Your Anger," isn't very effective. Darth Vader develops an alternative slogan, "Together We Can Rule the Galaxy." They compare the slogans on two groups of 50 captured droids each. In one group, Emperor Palpatine delivers the "Anger" slogan. In the other, Darth Vader presents the "Together" slogan. 20 droids convert to the Dark Side after hearing Palpatine's slogan, while only 5 droids convert after hearing Vader's. The Sith's data scientist concludes that "Anger" is a more effective slogan and should continue to be used.
+
+    This is a case of poor design because you're introducing multiple experimental variables. Palpatine delivers one message and Vader delivers the other, which means who is speaking becomes an experimental variable. Therefore, we have two experimental variables: anger vs. together slogan AND Vader vs. Palpatine as speaker.
+    To fix this experiment, I would test for each experimental variable. First, get 50 droids to listen to Palpatine deliver both the anger and together speech. Observe which is more successful at droid recruitment. Then, get another 50 droids to listen to the more successful speech for both Vader and Palpatine and see which speaker is more successful then. This only works if you assume that the droids are similar in their sampling, i.e. not more protocol droids in one versus the other.  
+
+
+2. In the past, the Jedi have had difficulty with public relations. They send two envoys, Jar Jar Binks and Mace Windu, to four friendly and four unfriendly planets respectively, with the goal of promoting favorable feelings toward the Jedi. Upon their return, the envoys learn that Jar Jar was much more effective than Windu: Over 75% of the people surveyed said their attitudes had become more favorable after speaking with Jar Jar, while only 65% said their attitudes had become more favorable after speaking with Windu. This makes Windu angry, because he is sure that he had a better success rate than Jar Jar on every planet. The Jedi choose Jar Jar to be their representative in the future.
+
+    This seems to be sampling bias. The groups that each envoy encountered were vastly different as identified by the friendly versus unfriendly categorization. It almost seems Mace Windu was more successful in converting the 65% of people from unfriendly planets.
+    To fix this experiment, I would send the envoys to 1 friendly and 1 unfriendly planet and then assess their effectiveness. Specifically, I would compare the % of people who were more favorable from unfriendly planets seprately from friendly planets between each envoy. It might show you that Jar Jar is more successful at friendly planets and Mace at unfriendly planets (i.e. maybe look to Simpson's Paradox here to unravel averaging across the groups). 
+
+
+3. A company with work sites in five different countries has sent you data on employee satisfaction rates for workers in Human Resources and workers in Information Technology. Most HR workers are concentrated in three of the countries, while IT workers are equally distributed across worksites. The company requests a report on satisfaction for each job type. You calculate average job satisfaction for HR and for IT and present the report.
+
+    I assume this means that the report separated out HR and IT departments already. If not, it would be important to look at them as distinct groups. I would also further split the reporting by country and division to get a true sense of satisfaction. Otherwise you're introducing bias in assignment to conditions because you're not controlling for demo, socioeconomic differences, managers / department heads, etc.
+
+
+4. When people install the Happy Days Fitness Tracker app, they are asked to "opt in" to a data collection scheme where their level of physical activity data is automatically sent to the company for product research purposes. During your interview with the company, they tell you that the app is very effective because after installing the app, the data show that people's activity levels rise steadily.
+
+    The app suffers from selection bias, because the people who opt-in are probably heavier users than the total population. People who opt-in are probably happier with the service and want to see their results versus the average person who doesn't opt-in and may be less active. 
+    It would be difficult to fix this study, because you don't want to start tracking data on people who don't opt-in which would increase your sample size and make your sample group more indicative of the population. Perhaps you could incentivize people who use the tracker less, which probably doesn't require an opt-in, to oopt-in with premium features or monetary rewards so you could create a more diverse sample and then see if activity levels still rise with the app. 
+
+
+5. To prevent cheating, a teacher writes three versions of a test. She stacks the three versions together, first all copies of Version A, then all copies of Version B, then all copies of Version C. As students arrive for the exam, each student takes a test. When grading the test, the teacher finds that students who took Version B scored higher than students who took either Version A or Version C. She concludes from this that Version B is easier, and discards it.
+
+    The experiment introduces bias in assignment to conditions. By stacking them together, she didn't randomize passing out the test. It is possible that the smartest kids came in the middle and received Version B. This would account for the higher scores on that test.
+    To fix this experiment, just shuffle the tests to be in A,B,and C order. Or after everyone is seated, pass out in an A,B, and C order. That might also cut down on cheating to make the data more reliable as well. 
