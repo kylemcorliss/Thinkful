@@ -1,0 +1,14 @@
+RESEARCH PROPOSAL (U1,L4,P5)
+
+PROBLEM
+
+How to increase favorability towards Jedi in the galaxy? Jedi are currently serving as generals while civil war and unrest exists in the galaxy. Some planets are friendly and others are less friendly towards Jedi. 
+
+SOLUTION
+
+The Jedi need a PR spokesperson to increase favorability towards the Jedi. Need to determine who (Jedi or not) would be a good spokesperson for the friendly and unfriendly planets. 
+
+TESTING METHOD
+
+    Send 2 candidates as envoys to 1 friendly and 1 unfriendly planet each and then assess their effectiveness. Specifically, I would compare the % of people who were more favorable from unfriendly planets seprately from friendly planets between each envoy. It might show you that one envoy is more favorable at friendly planets and the other more favorable at unfriendly planets (i.e. maybe look to Simpson's Paradox here to unravel averaging across the groups). The A/B test is to determine which spokesperson would be more effective overall and more effective with friendly and unfriendly planets. 
+    We will choose the PR spokesperson for each category of planet based on the more favorable percentage. If one candidate is better in both categories, then they will be the PR spokesperson for both categories. In the event that the difference between the 2 candidates is less than 5% for each category, then we will choose whomever has the higher overall rating.
