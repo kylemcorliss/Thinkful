@@ -1,0 +1,31 @@
+Categorize each of the following research questions as "good" or "bad", and provide alternative formulations for the bad ones. Save your responses in a document of some kind, submit a link below, and discuss your reasoning with your mentor.
+
+    What is the 1994 rate of juvenile delinquency in the U.S.? Bad
+        What will be the rate of juvenile delinquency in the U.S. next year based on historical (1994) data?
+        
+    What can we do to reduce juvenile delinquency in the U.S.? Bad
+        Can increased quality of education reduce juvenile delinquency in the U.S.? 
+    
+    Does education play a role in reducing juvenile delinquents' return to crime? Bad
+        Does quality of education play a role in reducing juvenile delinquents' return to crime?
+        Does level of education (i.e. middle school, high school, college, etc.) play a role in reducing juvenile delinquents' return to crime?
+    
+    How many customers does AT&T currently serve in Washington, DC? Bad
+        How many customers will AT&T add in the Washington, DC area next month?
+    
+    What factors lead consumers to choose AT&T over other service providers? Bad
+        What services and features lead consumers to choose AT&T over other service providers?
+    
+    How can AT&T attract more customers? Bad
+        Which marketing campaigns should AT&T continue to convert more leads to customers?
+    
+    Why did the Challenger Shuttle explode? Bad
+        What components of the Challenger Shuttle failed to cause it to explode?
+    
+    Which genes are associated with increased risk of breast cancer? Good
+    
+    Is it better to read to children at night or in the morning? Bad
+        Does reading to children ages 3-5 at night versus in the morning cause an increase in reading literacy?
+    
+    How does Google’s search algorithm work? Bad
+        Can you increase a website's pagerank with more or higher-searched page links?
