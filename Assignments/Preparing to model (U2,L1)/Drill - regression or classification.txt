@@ -1,0 +1,14 @@
+1.	The amount a person will spend on a given site in the next 24 months.  
+    regression
+2.	What color car someone is going to buy. 
+    classification
+3.	How many children a family will have. 
+    Classification first between 0 and >0 kids, then later regression for greater than 1 kid
+4.	If someone will sign up for a service.  
+    classification
+5.	The number of times someone will get sick in a year. 
+    regression
+6.	The probability someone will get sick in the next month. 
+    classification, because classification deals with probability
+7.	Which medicine will work best for a given patient. 
+    classification
