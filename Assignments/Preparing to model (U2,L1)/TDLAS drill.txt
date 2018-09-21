@@ -1,0 +1,17 @@
+TLADS DRILL
+
+cntry 	idno 	year 	tvtot 	ppltrst 	pplfair 	pplhlp 	happy 	sclmeet 	sclact 	gndr 	agea 	partner
+
+cntry = categorical
+idno = ordinal
+year = categorical
+tvtot = ordinal
+ppltrst = ordinal
+pplfair = ordinal
+pplhlp = ordinal
+happy = ordinal
+sclmeet = ordinal 
+sclact = ordinal
+gndr = categorical
+agea = ratio
+partner = categorical
