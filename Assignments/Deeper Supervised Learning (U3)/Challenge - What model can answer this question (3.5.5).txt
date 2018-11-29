@@ -1,0 +1,27 @@
+1.  Predict the running times of prospective Olympic sprinters using data from the last 20 Olympics.
+        Linear regression
+
+2.  You have more features (columns) than rows in your dataset.
+        SVM of some kind depending on the target variable. Because you don't have a lot of data but a lot of features, SVM will be able to use the most relevant points and then maximize the distance from the separation line.
+
+3.  Identify the most important characteristic predicting likelihood of being jailed before age 20.
+        Logistic regression if you're trying to identify the probability of being jailed rather than just jailed/not jailed.
+
+4.  Implement a filter to “highlight” emails that might be important to the recipient
+        This sounds similar to a spam filter so you could use a Naive Bayes classifier. 
+
+5.  You have 1000+ features.
+        Lasso regression to remove features that aren't relevant to the model's performance
+
+6.  Predict whether someone who adds items to their cart on a website will purchase the items.
+        SVC with binary classifier, trying to predict yes they will add items to cart or no they won't add items to cart
+
+7.  Your dataset dimensions are 982400 x 500
+        Need to remove some of those features. You can either do this with lasso or PCA.
+
+8.  Identify faces in an image.
+        SVC
+
+9.  Predict which of three flavors of ice cream will be most popular with boys vs girls.
+        Random Forest
+        
