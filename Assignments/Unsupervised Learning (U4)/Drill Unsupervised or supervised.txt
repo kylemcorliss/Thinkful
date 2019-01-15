@@ -1,0 +1,10 @@
+1. Define the likelihood that an individual will contract a specific disease
+    Supervised learning
+2. Translate a set of images into variables for modeling
+    Unsupervised learning
+3. An ecommerce company wants to identify power users
+    Supervised learning
+4. That same company wants to see shopping patterns in users
+    Both
+5. You want to reduce the number of variables inputting into your random forest model
+    Unsupervised learning (PCA)
