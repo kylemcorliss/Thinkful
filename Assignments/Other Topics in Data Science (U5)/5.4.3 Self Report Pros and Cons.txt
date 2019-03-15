@@ -1,0 +1,19 @@
+State whether a survey would be the best option for answering each of the following questions:
+
+1. Popularity of various Uber drivers. 
+    Survey, after their ride ask them for a rating from 1-5
+    
+2. A grocery store wants to know how much people like strawberry, chocolate, and vanilla ice cream.
+    No, look at behavioral data to see which flavor is purchased more.
+    
+3. Trojan wants to know whether their condoms are more popular among straight people or gay people. 
+    Survey, you can't ask sexual orientation at the checkout, but you could ask for someone to complete a survey including their opinion of Trojan condoms, which at the end they can identify their sexual orientation.
+    
+4. Recently, rental rates for HappyCars have increased by 30%, which is quite unusual. You want to find out why this is happening and how to keep the increase going. 
+    Probably not, first you need to figure out if mix of cars is changing towards higher rental rate cars. It could also be demand is increasing so individual managers are increasing prices to account for higher demand.
+    
+5. Assessing the success rate of a new advertising campaign.
+    Maybe. You're more likely to message test and content test a marketing campaign with a survey or focus groups prior to launch of the campaign. Once you launch the campaign and you want to measure its success, you're going to look at reach and engagement or maybe further down the business funnel at sales created by the campaign. Perhaps at the end you could ask people their opinion of the campaign, but I think once it launches you just care about the effect to the business (i.e. sales and revenue).
+    
+6. Measuring the effect of nurse/patient ratio on patient recovery rates in hospital wards.
+    No, that is data coming from the hospital related to staffing and patient traffic. Now, if you wanted to ask people how their experience was, you would need a survey. Then you could compare people's opinion / stated experience to nurse/patient ratios and see the correlation.
