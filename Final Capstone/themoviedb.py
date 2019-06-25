@@ -9,12 +9,13 @@ from sklearn.cluster import KMeans
 
 session = Session()
 # create a prepared request to wait for 429 errors from themoviedb api
-def retry(request, retry_count=5):
+def retry(request, retry_count=10):
     prepared = request.prepare()
     response = session.send(prepared)
     if response.status_code == 429:
         time.sleep(int(response.headers['Retry-After']))
-        return retry(request, retry_count-1)
+        if retry_count > 0:
+            return retry(request, retry_count-1)
     return response
 
 
@@ -28,6 +29,10 @@ def get_id(imdb_id):
         },
     )
     response = retry(request)
+    if response.status_code != 200:
+        print(f'Issue getting tmdb_id from: {imdb_id}, response: {response.text}')
+        raise ValueError
+
     result = response.json()
     if len(result["movie_results"]) == 0:
         return None
@@ -42,6 +47,9 @@ def get_detail(tmdb_id):
         params={"api_key": "fb2e18449dea58f15d0a8c727a8d7ee9", "language": "en-US"},
     )
     response = retry(request)
+    if response.status_code != 200:
+        print(f'Issue getting tmdb detail from: {tmdb_id}, response: {response.text}')
+        raise ValueError
     return response.json()
 
 
@@ -51,9 +59,11 @@ def get_credits(tmdb_id):
         params={"api_key": "fb2e18449dea58f15d0a8c727a8d7ee9"},
     )
     response = retry(request)
+    if response.status_code != 200:
+        print(f'Issue getting credits from: {tmdb_id}, response: {response.text}')
+        raise ValueError
     result = response.json()
-
-    return result["cast"][:4]
+    return result.get('cast',[])[:4]
 
 
 # request provides youtube URLs for the movie trailers, necessary to get youtube views
@@ -64,6 +74,10 @@ def get_video_urls(tmdb_id):
         params={"api_key": "fb2e18449dea58f15d0a8c727a8d7ee9", "language": "en-US"},
     )
     response = retry(request)
+    if response.status_code != 200:
+        print(f'Issue getting video urls from: {tmdb_id}, response: {response.text}')
+        raise ValueError
+
     result = response.json()    
 
     for item in result["results"]:
@@ -78,6 +92,9 @@ def get_keywords(tmdb_id):
         params={"api_key": "fb2e18449dea58f15d0a8c727a8d7ee9"},
     )
     response = retry(request)
+    if response.status_code != 200:
+        print(f'Issue getting keywords from: {tmdb_id}, response: {response.text}')
+        raise ValueError
     return response.json()
 
 
@@ -89,22 +106,29 @@ def get_social_ids(tmdb_id):
         params={"api_key": "fb2e18449dea58f15d0a8c727a8d7ee9"},
     )
     response = retry(request)
+    if response.status_code != 200:
+        print(f'Issue getting social ids from: {tmdb_id}, response: {response.text}')
+        raise ValueError
     return response.json()
 
 
 # youtube / google API to get data for video links
 @cache_to_disk("data/themoviedb_video_stats.pkl")
 def get_video_stats(yt_id):
-    request = requests.get("https://www.googleapis.com/youtube/v3/videos",
+    response = requests.get("https://www.googleapis.com/youtube/v3/videos",
         params={
             "part": "statistics",
             "id": yt_id,
-            "key": "AIzaSyACOXc4BZ-YVDaBMWSsoV4T4O_j8tRt2Aw",
+            "key": "AIzaSyBrRg_PHeRpS4PSyv2hQLThrjAskPlyaPU",
         },
     )
-    result = request.json()
+    result = response.json()
+    if response.status_code != 200:
+        print(f'Issue getting video stats from youtube_id: {yt_id}, response: {response.text}')
+        raise ValueError
+
     if len(result.get('items', {})) == 0:
-        return {}
+        return None
     return result['items'][0].get('statistics',{})
 
 # run all of the functions together for one specific url
