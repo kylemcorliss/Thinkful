@@ -111,6 +111,7 @@ def get_social_ids(tmdb_id):
         raise ValueError
     return response.json()
 
+from secrets import YT_API_KEY
 
 # youtube / google API to get data for video links
 @cache_to_disk("data/themoviedb_video_stats.pkl")
@@ -119,7 +120,7 @@ def get_video_stats(yt_id):
         params={
             "part": "statistics",
             "id": yt_id,
-            "key": "AIzaSyBrRg_PHeRpS4PSyv2hQLThrjAskPlyaPU",
+            "key": YT_API_KEY,
         },
     )
     result = response.json()
