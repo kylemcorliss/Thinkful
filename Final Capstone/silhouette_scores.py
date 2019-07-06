@@ -7,7 +7,7 @@ import numpy as np
 
 
 # determine the right number of clusters with silhouette plots
-def silhouette_scores(X, range_n_clusters, model_type):
+def silhouette_scores(X, range_n_clusters, model_type,xlim_max):
     for n_clusters in range_n_clusters:
         # Create a subplot with 1 row and 2 columns
         fig, (ax1, ax2) = plt.subplots(1, 2)
@@ -16,7 +16,7 @@ def silhouette_scores(X, range_n_clusters, model_type):
         # The 1st subplot is the silhouette plot
         # The silhouette coefficient can range from -1, 1 but in this example all
         # lie within [-0.1, 1]
-        ax1.set_xlim([-0.1, 1])
+        ax1.set_xlim([-0.1, xlim_max])
         # The (n_clusters+1)*10 is for inserting blank space between silhouette
         # plots of individual clusters, to demarcate them clearly.
     #     ax1.set_ylim([0, len(X_tfidf) + (n_clusters + 1) * 10])
@@ -66,6 +66,6 @@ def silhouette_scores(X, range_n_clusters, model_type):
         ax1.axvline(x=silhouette_avg, color="red", linestyle="--")
 
         ax1.set_yticks([])  # Clear the yaxis labels / ticks
-        ax1.set_xticks([-0.1, 0, 0.2, 0.4, 0.6, 0.8, 1])
+        # ax1.set_xticks([-0.1, 0, 0.2, 0.4, 0.6, 0.8, 1])
 
     plt.show()

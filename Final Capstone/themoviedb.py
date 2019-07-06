@@ -6,6 +6,7 @@ import json
 from cache_to_disk import cache_to_disk
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
+import pandas as pd
 
 session = Session()
 # create a prepared request to wait for 429 errors from themoviedb api
@@ -180,12 +181,16 @@ def vectorizer(df, input_col):
     
     return vectorizer.fit_transform(df[input_col])
 
-def cluster_movie_keywords(df,n_clusters):
+def tfidf_movie(df):
     df = df.dropna()
     df_agg = agg_keywords(df)
     X_tfidf = vectorizer(df_agg, 'keyword')
+    df_tfidf = pd.DataFrame(list(X_tfidf.toarray()),index=df_agg.index)
+    return df_agg, X_tfidf, df_tfidf
+   
+def cluster_movie_keywords(df_agg, X_tfidf,n_clusters):
     model = KMeans(n_clusters=n_clusters, random_state=42)
     y_pred = model.fit_predict(X_tfidf)
 
     df_agg['keyword_cluster'] = y_pred
-    return df_agg, model, X_tfidf
+    return df_agg, model
